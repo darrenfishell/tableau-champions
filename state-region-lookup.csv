@@ -1,0 +1,50 @@
+State,Region
+California,California
+Oregon,West
+Washington,West
+Idaho,West
+Montana,West
+Wyoming,West
+Nevada,West
+Utah,West
+Colorado,West
+Arizona,West
+New Mexico,West
+North Dakota,Plains
+South Dakota,Plains
+Nebraska,Plains
+Iowa,Plains
+Minnesota,Plains
+Kansas,Plains
+Missouri,Plains
+Oklahoma,SouthCentral
+Texas,SouthCentral
+Arkansas,SouthCentral
+Louisiana,SouthCentral
+Wisconsin,GreatLakes
+Illinois,GreatLakes
+Indiana,GreatLakes
+Michigan,GreatLakes
+Ohio,GreatLakes
+Maine,Northeast
+New Hampshire,Northeast
+Vermont,Northeast
+Massachusetts,Northeast
+Connecticut,Northeast
+Rhode Island,Northeast
+New Jersey,Northeast
+Pennsylvania,Northeast
+New York,Northeast
+Delaware,Midsouth
+Maryland,Midsouth
+Washington D.C.,Midsouth
+Virginia,Midsouth
+West Virginia,Midsouth
+Kentucky,Midsouth
+Tennessee,Midsouth
+North Carolina,Midsouth
+Mississippi,Southeast
+Alabama,Southeast
+Georgia,Southeast
+South Carolina,Southeast
+Florida,Southeast

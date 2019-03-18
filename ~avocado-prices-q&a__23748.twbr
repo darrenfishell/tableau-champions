@@ -1,0 +1,923 @@
+<?xml version='1.0' encoding='utf-8' ?>
+
+<!-- build 10500.18.0913.2134                               -->
+<workbook source-build='10.5.8 (10500.18.0913.2134)' source-platform='win' version='10.5' xml:base='https://10ax.online.tableau.com' xmlns:user='http://www.tableausoftware.com/xml/user'>
+  <repository-location id='avocado-prices' path='/t/arkatechturebeta/workbooks' revision='1.0' site='arkatechturebeta' />
+  <preferences>
+    <preference name='ui.encoding.shelf.height' value='24' />
+    <preference name='ui.shelf.height' value='26' />
+  </preferences>
+  <style>
+    <style-rule element='title'>
+      <format attr='color' value='#000000' />
+      <format attr='font-weight' value='normal' />
+    </style-rule>
+  </style>
+  <datasources>
+    <datasource caption='avocado-prices-by-metro-area' inline='true' name='federated.1fagxck1jg466x193opgk0c5zi7g (copy)' version='10.5'>
+      <connection class='federated'>
+        <named-connections>
+          <named-connection caption='avocado-prices.csv' name='textscan.06n4q151l7lka41cw7rds0mxtd9g (copy)'>
+            <connection class='textscan' directory='Data/fun data' filename='avocado-prices.csv.csv' password='' server='' workgroup-auth-mode='as-is' />
+          </named-connection>
+        </named-connections>
+        <relation name='Pivot' type='pivot'>
+          <columns>
+            <column datatype='string' name='Pivot Field Names' />
+            <column datatype='real' name='Pivot Field Values' />
+          </columns>
+          <tag name='Pivot Field Names'>
+            <value name='[Large Bags]' />
+            <value name='[Large Hass]' />
+            <value name='[Small Bags]' />
+            <value name='[Small Hass]' />
+            <value name='[XL Hass]' />
+            <value name='[XL Bags]' />
+          </tag>
+          <groups>
+            <group name='Pivot Field Values'>
+              <field name='[avocado-prices.csv.csv].[Large Bags]' />
+              <field name='[avocado-prices.csv.csv].[Large Hass]' />
+              <field name='[avocado-prices.csv.csv].[Small Bags]' />
+              <field name='[avocado-prices.csv.csv].[Small Hass]' />
+              <field name='[avocado-prices.csv.csv].[XL Hass]' />
+              <field name='[avocado-prices.csv.csv].[XLarge Bags]' />
+            </group>
+          </groups>
+          <relation connection='textscan.06n4q151l7lka41cw7rds0mxtd9g (copy)' name='avocado-prices.csv.csv' table='[avocado-prices.csv#csv]' type='table'>
+            <columns character-set='UTF-8' header='yes' locale='en_US' separator=','>
+              <column datatype='date' name='Date' ordinal='0' />
+              <column datatype='real' name='AveragePrice' ordinal='1' />
+              <column datatype='real' name='Total Volume' ordinal='2' />
+              <column datatype='real' name='Small Hass' ordinal='3' />
+              <column datatype='real' name='Large Hass' ordinal='4' />
+              <column datatype='real' name='XL Hass' ordinal='5' />
+              <column datatype='real' name='Total Bags' ordinal='6' />
+              <column datatype='real' name='Small Bags' ordinal='7' />
+              <column datatype='real' name='Large Bags' ordinal='8' />
+              <column datatype='real' name='XLarge Bags' ordinal='9' />
+              <column datatype='string' name='Type' ordinal='10' />
+              <column datatype='integer' name='Year' ordinal='11' />
+              <column datatype='string' name='Region' ordinal='12' />
+            </columns>
+          </relation>
+        </relation>
+        <metadata-records>
+          <metadata-record class='capability'>
+            <remote-name />
+            <remote-type>0</remote-type>
+            <parent-name>[avocado-prices.csv.csv]</parent-name>
+            <remote-alias />
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='character-set'>&quot;UTF-8&quot;</attribute>
+              <attribute datatype='string' name='collation'>&quot;en_US&quot;</attribute>
+              <attribute datatype='string' name='field-delimiter'>&quot;,&quot;</attribute>
+              <attribute datatype='string' name='header-row'>&quot;true&quot;</attribute>
+              <attribute datatype='string' name='locale'>&quot;en_US&quot;</attribute>
+              <attribute datatype='string' name='single-char'>&quot;&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Date</remote-name>
+            <remote-type>133</remote-type>
+            <local-name>[Date]</local-name>
+            <parent-name>[avocado-prices.csv.csv]</parent-name>
+            <remote-alias>Date</remote-alias>
+            <ordinal>0</ordinal>
+            <local-type>date</local-type>
+            <aggregation>Year</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>AveragePrice</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[AveragePrice]</local-name>
+            <parent-name>[avocado-prices.csv.csv]</parent-name>
+            <remote-alias>AveragePrice</remote-alias>
+            <ordinal>1</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Total Volume</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[Total Volume]</local-name>
+            <parent-name>[avocado-prices.csv.csv]</parent-name>
+            <remote-alias>Total Volume</remote-alias>
+            <ordinal>2</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Total Bags</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[Total Bags]</local-name>
+            <parent-name>[avocado-prices.csv.csv]</parent-name>
+            <remote-alias>Total Bags</remote-alias>
+            <ordinal>3</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Type</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[Type]</local-name>
+            <parent-name>[avocado-prices.csv.csv]</parent-name>
+            <remote-alias>Type</remote-alias>
+            <ordinal>4</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Year</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Year]</local-name>
+            <parent-name>[avocado-prices.csv.csv]</parent-name>
+            <remote-alias>Year</remote-alias>
+            <ordinal>5</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Region</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[Region]</local-name>
+            <parent-name>[avocado-prices.csv.csv]</parent-name>
+            <remote-alias>Region</remote-alias>
+            <ordinal>6</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Pivot Field Names</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[Pivot Field Names]</local-name>
+            <parent-name>[Pivot]</parent-name>
+            <remote-alias>Pivot Field Names</remote-alias>
+            <ordinal>7</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Pivot Field Values</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[Pivot Field Values]</local-name>
+            <parent-name>[Pivot]</parent-name>
+            <remote-alias>Pivot Field Values</remote-alias>
+            <ordinal>8</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+        </metadata-records>
+      </connection>
+      <aliases enabled='yes' />
+      <column aggregation='Avg' caption='Average price' datatype='real' name='[AveragePrice]' role='measure' type='quantitative' />
+      <column caption='Avocado revenue' datatype='integer' name='[Calculation_1469862365833113600]' role='measure' type='quantitative'>
+        <calculation class='tableau' formula='FLOOR([Pivot Field Values]/[AveragePrice])' />
+      </column>
+      <column datatype='date' name='[Date]' role='dimension' type='quantitative' />
+      <column caption='Geography level (metro, region, state)' datatype='string' name='[Geography level (copy)]' role='dimension' type='nominal'>
+        <calculation class='categorical-bin' column='[Region]' new-bin='true'>
+          <bin default-name='false' value='&quot;All US&quot;'>
+            <value>&quot;TotalUS&quot;</value>
+          </bin>
+          <bin default-name='false' value='&quot;Markets&quot;'>
+            <value>&quot;California&quot;</value>
+            <value>&quot;GreatLakes&quot;</value>
+            <value>&quot;Midsouth&quot;</value>
+            <value>&quot;Northeast&quot;</value>
+            <value>&quot;NorthernNewEngland&quot;</value>
+            <value>&quot;Plains&quot;</value>
+            <value>&quot;SouthCentral&quot;</value>
+            <value>&quot;Southeast&quot;</value>
+            <value>&quot;West&quot;</value>
+          </bin>
+          <bin default-name='false' value='&quot;Metro areas&quot;'>
+            <value>&quot;Albany&quot;</value>
+            <value>&quot;Atlanta&quot;</value>
+            <value>&quot;BaltimoreWashington&quot;</value>
+            <value>&quot;Boise&quot;</value>
+            <value>&quot;Boston&quot;</value>
+            <value>&quot;BuffaloRochester&quot;</value>
+            <value>&quot;Charlotte&quot;</value>
+            <value>&quot;Chicago&quot;</value>
+            <value>&quot;CincinnatiDayton&quot;</value>
+            <value>&quot;Columbus&quot;</value>
+            <value>&quot;DallasFtWorth&quot;</value>
+            <value>&quot;Denver&quot;</value>
+            <value>&quot;Detroit&quot;</value>
+            <value>&quot;GrandRapids&quot;</value>
+            <value>&quot;HarrisburgScranton&quot;</value>
+            <value>&quot;HartfordSpringfield&quot;</value>
+            <value>&quot;Houston&quot;</value>
+            <value>&quot;Indianapolis&quot;</value>
+            <value>&quot;Jacksonville&quot;</value>
+            <value>&quot;LasVegas&quot;</value>
+            <value>&quot;LosAngeles&quot;</value>
+            <value>&quot;Louisville&quot;</value>
+            <value>&quot;MiamiFtLauderdale&quot;</value>
+            <value>&quot;Nashville&quot;</value>
+            <value>&quot;NewOrleansMobile&quot;</value>
+            <value>&quot;NewYork&quot;</value>
+            <value>&quot;Orlando&quot;</value>
+            <value>&quot;Philadelphia&quot;</value>
+            <value>&quot;PhoenixTucson&quot;</value>
+            <value>&quot;Pittsburgh&quot;</value>
+            <value>&quot;Portland&quot;</value>
+            <value>&quot;RaleighGreensboro&quot;</value>
+            <value>&quot;RichmondNorfolk&quot;</value>
+            <value>&quot;Roanoke&quot;</value>
+            <value>&quot;Sacramento&quot;</value>
+            <value>&quot;SanDiego&quot;</value>
+            <value>&quot;SanFrancisco&quot;</value>
+            <value>&quot;Seattle&quot;</value>
+            <value>&quot;SouthCarolina&quot;</value>
+            <value>&quot;Spokane&quot;</value>
+            <value>&quot;StLouis&quot;</value>
+            <value>&quot;Syracuse&quot;</value>
+            <value>&quot;Tampa&quot;</value>
+            <value>&quot;WestTexNewMexico&quot;</value>
+          </bin>
+        </calculation>
+      </column>
+      <column datatype='integer' name='[Number of Records]' role='measure' type='quantitative' user:auto-column='numrec'>
+        <calculation class='tableau' formula='1' />
+      </column>
+      <column caption='Size' datatype='string' name='[Pivot Field Names - Split 1]' role='dimension' type='nominal' user:SplitFieldIndex='1' user:SplitFieldOrigin='[federated.1fagxck1jg466x193opgk0c5zi7g (copy)].[Pivot Field Names]'>
+        <calculation class='tableau' formula='TRIM( SPLIT( [Pivot Field Names], &quot; &quot;, 1 ) )' />
+      </column>
+      <column caption='Hass/Bags' datatype='string' name='[Pivot Field Names - Split 2]' role='dimension' type='nominal' user:SplitFieldIndex='2' user:SplitFieldOrigin='[federated.1fagxck1jg466x193opgk0c5zi7g (copy)].[Pivot Field Names]'>
+        <calculation class='tableau' formula='TRIM( SPLIT( [Pivot Field Names], &quot; &quot;, 2 ) )' />
+      </column>
+      <column caption='Pivot dimensions' datatype='string' hidden='true' name='[Pivot Field Names]' role='dimension' type='nominal' />
+      <column caption='Avocados sold' datatype='real' name='[Pivot Field Values]' role='measure' type='quantitative' />
+      <column caption='Metro area' datatype='string' name='[Region]' role='dimension' semantic-role='[City].[Name]' type='nominal' />
+      <column datatype='real' hidden='true' name='[Total Bags]' role='measure' type='quantitative' />
+      <column datatype='real' hidden='true' name='[Total Volume]' role='measure' type='quantitative' />
+      <column caption='Conventional/Organic' datatype='string' name='[Type]' role='dimension' type='nominal' />
+      <column datatype='integer' hidden='true' name='[Year]' role='dimension' type='ordinal' />
+      <column-instance column='[Pivot Field Names - Split 1]' derivation='None' name='[none:Pivot Field Names - Split 1:nk]' pivot='key' type='nominal' />
+      <column-instance column='[Region]' derivation='None' name='[none:Region:nk]' pivot='key' type='nominal' />
+      <folder name='Avocado dimensions' role='dimensions'>
+        <folder-item name='[Pivot Field Names - Split 1]' type='field' />
+        <folder-item name='[Pivot Field Names - Split 2]' type='field' />
+        <folder-item name='[Type]' type='field' />
+      </folder>
+      <extract count='-1' enabled='true' units='records'>
+        <connection access_mode='readonly' authentication='auth-none' author-locale='en_US' class='hyper' dbname='Data/fun data/avocado-prices-by-market.hyper' default-settings='yes' schema='Extract' sslmode='' tablename='Extract' update-time='03/15/2019 03:58:01 PM' username='tableau_internal_user'>
+          <relation name='Extract' table='[Extract].[Extract]' type='table' />
+          <refresh>
+            <refresh-event add-from-file-path='avocado-prices-by-market' increment-value='%null%' refresh-type='create' rows-inserted='109494' timestamp-start='2019-03-15 15:58:01.928' />
+          </refresh>
+          <metadata-records>
+            <metadata-record class='column'>
+              <remote-name>Date</remote-name>
+              <remote-type>133</remote-type>
+              <local-name>[Date]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>Date</remote-alias>
+              <ordinal>0</ordinal>
+              <family>avocado-prices.csv.csv</family>
+              <local-type>date</local-type>
+              <aggregation>Year</aggregation>
+              <approx-count>169</approx-count>
+              <contains-null>true</contains-null>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>AveragePrice</remote-name>
+              <remote-type>5</remote-type>
+              <local-name>[AveragePrice]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>AveragePrice</remote-alias>
+              <ordinal>1</ordinal>
+              <family>avocado-prices.csv.csv</family>
+              <local-type>real</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>183</approx-count>
+              <contains-null>true</contains-null>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Type</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[Type]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>Type</remote-alias>
+              <ordinal>2</ordinal>
+              <family>avocado-prices.csv.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>2</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LEN_RUS' />
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Year</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[Year]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>Year</remote-alias>
+              <ordinal>3</ordinal>
+              <family>avocado-prices.csv.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>4</approx-count>
+              <contains-null>true</contains-null>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Region</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[Region]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>Region</remote-alias>
+              <ordinal>4</ordinal>
+              <family>avocado-prices.csv.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>54</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LEN_RUS' />
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Pivot Field Names</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[Pivot Field Names]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>Pivot Field Names</remote-alias>
+              <ordinal>5</ordinal>
+              <family>Pivot</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>6</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='binary' />
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Pivot Field Values</remote-name>
+              <remote-type>5</remote-type>
+              <local-name>[Pivot Field Values]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>Pivot Field Values</remote-alias>
+              <ordinal>6</ordinal>
+              <family>Pivot</family>
+              <local-type>real</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>1540</approx-count>
+              <contains-null>true</contains-null>
+            </metadata-record>
+          </metadata-records>
+        </connection>
+      </extract>
+      <layout dim-ordering='alphabetic' dim-percentage='0.566751' measure-ordering='alphabetic' measure-percentage='0.433249' show-structure='false' />
+      <style>
+        <style-rule element='mark'>
+          <encoding attr='color' field='[none:Region:nk]' type='palette'>
+            <map to='#499894'>
+              <bucket>&quot;BaltimoreWashington&quot;</bucket>
+            </map>
+            <map to='#499894'>
+              <bucket>&quot;HarrisburgScranton&quot;</bucket>
+            </map>
+            <map to='#4e79a7'>
+              <bucket>&quot;Albany&quot;</bucket>
+            </map>
+            <map to='#4e79a7'>
+              <bucket>&quot;LosAngeles&quot;</bucket>
+            </map>
+            <map to='#4e79a7'>
+              <bucket>&quot;SouthCarolina&quot;</bucket>
+            </map>
+            <map to='#59a14f'>
+              <bucket>&quot;PhoenixTucson&quot;</bucket>
+            </map>
+            <map to='#59a14f'>
+              <bucket>&quot;RaleighGreensboro&quot;</bucket>
+            </map>
+            <map to='#79706e'>
+              <bucket>&quot;Indianapolis&quot;</bucket>
+            </map>
+            <map to='#79706e'>
+              <bucket>&quot;MiamiFtLauderdale&quot;</bucket>
+            </map>
+            <map to='#79706e'>
+              <bucket>&quot;West&quot;</bucket>
+            </map>
+            <map to='#86bcb6'>
+              <bucket>&quot;Chicago&quot;</bucket>
+            </map>
+            <map to='#86bcb6'>
+              <bucket>&quot;Nashville&quot;</bucket>
+            </map>
+            <map to='#86bcb6'>
+              <bucket>&quot;Northeast&quot;</bucket>
+            </map>
+            <map to='#8cd17d'>
+              <bucket>&quot;Midsouth&quot;</bucket>
+            </map>
+            <map to='#8cd17d'>
+              <bucket>&quot;NewOrleansMobile&quot;</bucket>
+            </map>
+            <map to='#8cd17d'>
+              <bucket>&quot;SouthCentral&quot;</bucket>
+            </map>
+            <map to='#8cd17d'>
+              <bucket>&quot;WestTexNewMexico&quot;</bucket>
+            </map>
+            <map to='#9d7660'>
+              <bucket>&quot;Pittsburgh&quot;</bucket>
+            </map>
+            <map to='#9d7660'>
+              <bucket>&quot;Tampa&quot;</bucket>
+            </map>
+            <map to='#a0cbe8'>
+              <bucket>&quot;NewYork&quot;</bucket>
+            </map>
+            <map to='#a0cbe8'>
+              <bucket>&quot;Orlando&quot;</bucket>
+            </map>
+            <map to='#a0cbe8'>
+              <bucket>&quot;Spokane&quot;</bucket>
+            </map>
+            <map to='#b07aa1'>
+              <bucket>&quot;Roanoke&quot;</bucket>
+            </map>
+            <map to='#b07aa1'>
+              <bucket>&quot;Sacramento&quot;</bucket>
+            </map>
+            <map to='#b6992d'>
+              <bucket>&quot;California&quot;</bucket>
+            </map>
+            <map to='#b6992d'>
+              <bucket>&quot;CincinnatiDayton&quot;</bucket>
+            </map>
+            <map to='#b6992d'>
+              <bucket>&quot;Denver&quot;</bucket>
+            </map>
+            <map to='#b6992d'>
+              <bucket>&quot;Southeast&quot;</bucket>
+            </map>
+            <map to='#bab0ac'>
+              <bucket>&quot;Boston&quot;</bucket>
+            </map>
+            <map to='#bab0ac'>
+              <bucket>&quot;GrandRapids&quot;</bucket>
+            </map>
+            <map to='#d37295'>
+              <bucket>&quot;Columbus&quot;</bucket>
+            </map>
+            <map to='#d37295'>
+              <bucket>&quot;SanDiego&quot;</bucket>
+            </map>
+            <map to='#d4a6c8'>
+              <bucket>&quot;BuffaloRochester&quot;</bucket>
+            </map>
+            <map to='#d4a6c8'>
+              <bucket>&quot;Philadelphia&quot;</bucket>
+            </map>
+            <map to='#d7b5a6'>
+              <bucket>&quot;Detroit&quot;</bucket>
+            </map>
+            <map to='#d7b5a6'>
+              <bucket>&quot;Louisville&quot;</bucket>
+            </map>
+            <map to='#e15759'>
+              <bucket>&quot;Charlotte&quot;</bucket>
+            </map>
+            <map to='#e15759'>
+              <bucket>&quot;NorthernNewEngland&quot;</bucket>
+            </map>
+            <map to='#e15759'>
+              <bucket>&quot;Portland&quot;</bucket>
+            </map>
+            <map to='#f1ce63'>
+              <bucket>&quot;RichmondNorfolk&quot;</bucket>
+            </map>
+            <map to='#f1ce63'>
+              <bucket>&quot;SanFrancisco&quot;</bucket>
+            </map>
+            <map to='#f28e2b'>
+              <bucket>&quot;Boise&quot;</bucket>
+            </map>
+            <map to='#f28e2b'>
+              <bucket>&quot;DallasFtWorth&quot;</bucket>
+            </map>
+            <map to='#f28e2b'>
+              <bucket>&quot;LasVegas&quot;</bucket>
+            </map>
+            <map to='#fabfd2'>
+              <bucket>&quot;Atlanta&quot;</bucket>
+            </map>
+            <map to='#fabfd2'>
+              <bucket>&quot;GreatLakes&quot;</bucket>
+            </map>
+            <map to='#fabfd2'>
+              <bucket>&quot;Jacksonville&quot;</bucket>
+            </map>
+            <map to='#fabfd2'>
+              <bucket>&quot;Plains&quot;</bucket>
+            </map>
+            <map to='#ff9d9a'>
+              <bucket>&quot;Seattle&quot;</bucket>
+            </map>
+            <map to='#ff9d9a'>
+              <bucket>&quot;StLouis&quot;</bucket>
+            </map>
+            <map to='#ff9d9a'>
+              <bucket>&quot;TotalUS&quot;</bucket>
+            </map>
+            <map to='#ffbe7d'>
+              <bucket>&quot;HartfordSpringfield&quot;</bucket>
+            </map>
+            <map to='#ffbe7d'>
+              <bucket>&quot;Houston&quot;</bucket>
+            </map>
+            <map to='#ffbe7d'>
+              <bucket>&quot;Syracuse&quot;</bucket>
+            </map>
+          </encoding>
+          <encoding attr='color' field='[none:Pivot Field Names - Split 1:nk]' type='palette'>
+            <map to='#4e79a7'>
+              <bucket>&quot;Large&quot;</bucket>
+            </map>
+            <map to='#e15759'>
+              <bucket>&quot;XL&quot;</bucket>
+            </map>
+            <map to='#f28e2b'>
+              <bucket>&quot;Small&quot;</bucket>
+            </map>
+          </encoding>
+        </style-rule>
+      </style>
+      <semantic-values>
+        <semantic-value key='[Country].[Name]' value='&quot;United States&quot;' />
+      </semantic-values>
+      <field-sort-info field-sort-order-type='custom-order'>
+        <field-sort-custom-order field='Date' />
+        <field-sort-custom-order field='AveragePrice' />
+        <field-sort-custom-order field='Type' />
+        <field-sort-custom-order field='Year' />
+        <field-sort-custom-order field='Region' />
+        <field-sort-custom-order field='Pivot Field Names' />
+        <field-sort-custom-order field='Pivot Field Names - Split 1' />
+        <field-sort-custom-order field='Pivot Field Names - Split 2' />
+        <field-sort-custom-order field='Pivot Field Values' />
+        <field-sort-custom-order field='Calculation_1469862365833113600' />
+        <field-sort-custom-order field='Region (group)' />
+        <field-sort-custom-order field='Geography level (copy)' />
+        <field-sort-custom-order field='Total Volume' />
+        <field-sort-custom-order field='Total Bags' />
+      </field-sort-info>
+      <filter class='categorical' column='[Geography level (copy)]' filter-group='2'>
+        <groupfilter function='member' level='[Geography level (copy)]' member='&quot;Metro areas&quot;' user:ui-domain='database' user:ui-enumeration='inclusive' user:ui-marker='enumerate' />
+      </filter>
+    </datasource>
+  </datasources>
+  <worksheets>
+    <worksheet name='1. Avocados sold by year'>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run bold='true'>&lt;Sheet Name&gt;</run>
+            <run>Æ&#10;</run>
+            <run fontsize='11'>To the left, Tableau breaks out measures and dimensions it has identified in your data. Double-click on a measure or dimension and Tableau will guess where it should go. Dates, for instance, are placed by default along the &quot;columns&quot; shelf, displaying as a horizontal timeline.</run>
+            <run>Æ&#10;&#10;</run>
+            <run fontsize='11'>Instructions: Double-click on the Date field and then Avocados sold. Tableau will create a line chart of avocados sold, by year.</run>
+            <run>Æ&#10;&#10;</run>
+            <run fontsize='11'>Across Tableau, measures are numerical values -- sums, averages, counts -- and dimensions are how you break those measures up. For instance, the sum of avocados sold (measure) by date (dimension). In the next tab, we&apos;ll break that measure up by another dimension, avocado type.</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <table>
+        <view>
+          <datasources />
+          <aggregation value='true' />
+        </view>
+        <style />
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-labels-show' value='false' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows />
+        <cols />
+      </table>
+    </worksheet>
+    <worksheet name='2. Organic and conventional'>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run bold='true'>&lt;Sheet Name&gt;</run>
+            <run>Æ&#10;</run>
+            <run fontsize='11'>Let&apos;s slice these sales figures another way: by conventional and organic avocado sales. This dimension (and others) have been organized into the dimension folder &quot;Avocado dimensions.&quot; </run>
+            <run>Æ&#10;&#10;</run>
+            <run bold='true' fontsize='11'>Instruction: </run>
+            <run fontsize='11'>Expand the &quot;Avocado dimensions&quot; folder and double-click on &quot;Conventional/Organic.&quot;</run>
+            <run>Æ&#10;</run>
+            <run fontsize='11'>Tableau, by default, applies this dimension to &quot;colors,&quot; with a </run>
+            <run bold='true' fontsize='11'>pill</run>
+            <run fontsize='11'> for that dimension now shown in the </run>
+            <run bold='true' fontsize='11'>marks</run>
+            <run fontsize='11'> card. Everything Tableau draws in a chart is referred to as a </run>
+            <run bold='true' fontsize='11'>mark. </run>
+            <run fontsize='11'>Those marks can be lines, dots, squares, area charts, maps and more. </run>
+            <run>Æ&#10;</run>
+            <run fontsize='11'>Colors are just one way Tableau allows you to slice data. Let&apos;s try some others... </run>
+            <run>Æ&#10;&#10;</run>
+            <run bold='true' fontsize='11'>Instruction: </run>
+            <run fontsize='11'>Click the colored circles next to &quot;Conventional/Organic&quot; on the marks card and change the selection to &quot;Size.&quot; </run>
+            <run>Æ&#10;</run>
+            <run fontsize='11'>Tableau will now differentiate the values in that dimension (&quot;conventional&quot; and &quot;organic&quot;) by different sizes. </run>
+            <run>Æ&#10;&#10;</run>
+            <run bold='true' fontsize='11'>Instruction: </run>
+            <run fontsize='11'>Click the same toggle button to change the dimension from &quot;Size&quot; to &quot;Detail.&quot; </run>
+            <run>Æ&#10;</run>
+            <run fontsize='11'>Tableau now keeps these mark types equal, but splits them out.</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='avocado-prices-by-metro-area' name='federated.1fagxck1jg466x193opgk0c5zi7g (copy)' />
+          </datasources>
+          <datasource-dependencies datasource='federated.1fagxck1jg466x193opgk0c5zi7g (copy)'>
+            <column datatype='date' name='[Date]' role='dimension' type='quantitative' />
+            <column caption='Avocados sold' datatype='real' name='[Pivot Field Values]' role='measure' type='quantitative' />
+            <column caption='Conventional/Organic' datatype='string' name='[Type]' role='dimension' type='nominal' />
+            <column-instance column='[Type]' derivation='None' name='[none:Type:nk]' pivot='key' type='nominal' />
+            <column-instance column='[Pivot Field Values]' derivation='Sum' name='[sum:Pivot Field Values:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Date]' derivation='Year-Trunc' name='[tyr:Date:qk]' pivot='key' type='quantitative' />
+          </datasource-dependencies>
+          <aggregation value='true' />
+        </view>
+        <style />
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <lod column='[federated.1fagxck1jg466x193opgk0c5zi7g (copy)].[none:Type:nk]' />
+            </encodings>
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-labels-show' value='false' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>[federated.1fagxck1jg466x193opgk0c5zi7g (copy)].[sum:Pivot Field Values:qk]</rows>
+        <cols>[federated.1fagxck1jg466x193opgk0c5zi7g (copy)].[tyr:Date:qk]</cols>
+      </table>
+    </worksheet>
+    <worksheet name='3. Combining dimensions'>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run bold='true'>&lt;Sheet Name&gt;</run>
+            <run>Æ&#10;</run>
+            <run fontsize='11'>These different ways to divide up your data can also be combined, using the same or different measures.</run>
+            <run>Æ&#10;&#10;</run>
+            <run bold='true' fontsize='11'>Instruction: </run>
+            <run fontsize='11'>Break out &quot;Conventional/Organic&quot; avocado sales by color </run>
+            <run fontsize='11' italic='true'>and</run>
+            <run fontsize='11'>  by size, adding the dimension to the marks card twice, in the appropriate spots.</run>
+            <run>Æ&#10;&#10;</run>
+            <run fontsize='11'>Already, at this early stage, we&apos;re presented with a question about visualization best practices. In short, we don&apos;t need both mark types to distinguish conventional from organic sales.</run>
+            <run>Æ&#10;&#10;</run>
+            <run bold='true' fontsize='11'>Instruction: </run>
+            <run fontsize='11'>Add more meaning to this visualization by replacing &quot;Conventional /Organic&quot; with &quot;Hass/Bags&quot; on either the &quot;Color&quot; or &quot;Size&quot; property.</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='avocado-prices-by-metro-area' name='federated.1fagxck1jg466x193opgk0c5zi7g (copy)' />
+          </datasources>
+          <datasource-dependencies datasource='federated.1fagxck1jg466x193opgk0c5zi7g (copy)'>
+            <column datatype='date' name='[Date]' role='dimension' type='quantitative' />
+            <column caption='Hass/Bags' datatype='string' name='[Pivot Field Names - Split 2]' role='dimension' type='nominal' user:SplitFieldIndex='2' user:SplitFieldOrigin='[federated.1fagxck1jg466x193opgk0c5zi7g (copy)].[Pivot Field Names]'>
+              <calculation class='tableau' formula='TRIM( SPLIT( [Pivot Field Names], &quot; &quot;, 2 ) )' />
+            </column>
+            <column caption='Pivot dimensions' datatype='string' hidden='true' name='[Pivot Field Names]' role='dimension' type='nominal' />
+            <column caption='Avocados sold' datatype='real' name='[Pivot Field Values]' role='measure' type='quantitative' />
+            <column caption='Conventional/Organic' datatype='string' name='[Type]' role='dimension' type='nominal' />
+            <column-instance column='[Pivot Field Names - Split 2]' derivation='None' name='[none:Pivot Field Names - Split 2:nk]' pivot='key' type='nominal' />
+            <column-instance column='[Type]' derivation='None' name='[none:Type:nk]' pivot='key' type='nominal' />
+            <column-instance column='[Pivot Field Values]' derivation='Sum' name='[sum:Pivot Field Values:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Date]' derivation='Year-Trunc' name='[tyr:Date:qk]' pivot='key' type='quantitative' />
+          </datasource-dependencies>
+          <aggregation value='true' />
+        </view>
+        <style />
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <color column='[federated.1fagxck1jg466x193opgk0c5zi7g (copy)].[none:Type:nk]' />
+              <size column='[federated.1fagxck1jg466x193opgk0c5zi7g (copy)].[none:Pivot Field Names - Split 2:nk]' />
+            </encodings>
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-labels-show' value='false' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>[federated.1fagxck1jg466x193opgk0c5zi7g (copy)].[sum:Pivot Field Values:qk]</rows>
+        <cols>[federated.1fagxck1jg466x193opgk0c5zi7g (copy)].[tyr:Date:qk]</cols>
+      </table>
+    </worksheet>
+    <worksheet name='4. Dimensions Two Ways'>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run bold='true'>&lt;Sheet Name&gt;</run>
+            <run>Æ&#10;</run>
+            <run fontsize='11'>Either way you cut it, the previous step leaves a little to be desired. Here, with Hass/Bags on the &quot;Size&quot; property, it&apos;s hard to tell what&apos;s going on with </run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='avocado-prices-by-metro-area' name='federated.1fagxck1jg466x193opgk0c5zi7g (copy)' />
+          </datasources>
+          <datasource-dependencies datasource='federated.1fagxck1jg466x193opgk0c5zi7g (copy)'>
+            <column datatype='date' name='[Date]' role='dimension' type='quantitative' />
+            <column caption='Hass/Bags' datatype='string' name='[Pivot Field Names - Split 2]' role='dimension' type='nominal' user:SplitFieldIndex='2' user:SplitFieldOrigin='[federated.1fagxck1jg466x193opgk0c5zi7g (copy)].[Pivot Field Names]'>
+              <calculation class='tableau' formula='TRIM( SPLIT( [Pivot Field Names], &quot; &quot;, 2 ) )' />
+            </column>
+            <column caption='Pivot dimensions' datatype='string' hidden='true' name='[Pivot Field Names]' role='dimension' type='nominal' />
+            <column caption='Avocados sold' datatype='real' name='[Pivot Field Values]' role='measure' type='quantitative' />
+            <column caption='Conventional/Organic' datatype='string' name='[Type]' role='dimension' type='nominal' />
+            <column-instance column='[Pivot Field Names - Split 2]' derivation='None' name='[none:Pivot Field Names - Split 2:nk]' pivot='key' type='nominal' />
+            <column-instance column='[Type]' derivation='None' name='[none:Type:nk]' pivot='key' type='nominal' />
+            <column-instance column='[Pivot Field Values]' derivation='Sum' name='[sum:Pivot Field Values:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Date]' derivation='Year-Trunc' name='[tyr:Date:qk]' pivot='key' type='quantitative' />
+          </datasource-dependencies>
+          <aggregation value='true' />
+        </view>
+        <style />
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <color column='[federated.1fagxck1jg466x193opgk0c5zi7g (copy)].[none:Type:nk]' />
+              <size column='[federated.1fagxck1jg466x193opgk0c5zi7g (copy)].[none:Pivot Field Names - Split 2:nk]' />
+            </encodings>
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-labels-show' value='false' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>[federated.1fagxck1jg466x193opgk0c5zi7g (copy)].[sum:Pivot Field Values:qk]</rows>
+        <cols>[federated.1fagxck1jg466x193opgk0c5zi7g (copy)].[tyr:Date:qk]</cols>
+      </table>
+    </worksheet>
+  </worksheets>
+  <windows source-height='30'>
+    <window class='worksheet' name='1. Avocados sold by year'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+      </cards>
+    </window>
+    <window class='worksheet' name='2. Organic and conventional'>
+      <cards>
+        <edge name='left'>
+          <strip size='229'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <zoom type='entire-view' />
+      </viewpoint>
+    </window>
+    <window class='worksheet' name='3. Combining dimensions'>
+      <cards>
+        <edge name='left'>
+          <strip size='229'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card pane-specification-id='0' param='[federated.1fagxck1jg466x193opgk0c5zi7g (copy)].[none:Type:nk]' type='color' />
+            <card pane-specification-id='0' param='[federated.1fagxck1jg466x193opgk0c5zi7g (copy)].[none:Pivot Field Names - Split 2:nk]' type='size' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <zoom type='entire-view' />
+      </viewpoint>
+    </window>
+    <window class='worksheet' maximized='true' name='4. Dimensions Two Ways'>
+      <cards>
+        <edge name='left'>
+          <strip size='229'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card pane-specification-id='0' param='[federated.1fagxck1jg466x193opgk0c5zi7g (copy)].[none:Type:nk]' type='color' />
+            <card pane-specification-id='0' param='[federated.1fagxck1jg466x193opgk0c5zi7g (copy)].[none:Pivot Field Names - Split 2:nk]' type='size' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <zoom type='entire-view' />
+      </viewpoint>
+    </window>
+  </windows>
+</workbook>
